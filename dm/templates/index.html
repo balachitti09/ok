@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutracutical recommendation System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"/>
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-screen">
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="text-center mb-4" style="background-color: white; font-size: 40px; border-radius: 10px; padding: 10px 50px;">Nutracutical recommendation System</h1>
+                            <form action="/predict" method="post">
+                                <div class="mb-3">
+                                    <label style="color: white; font-weight: bold; padding-bottom: 20px;" for="symptoms" class="form-label">Enter Symptoms (comma-separated):</label><br><br>
+                                    <input style="padding: 15px 200px 15px 10px; border-radius: 10px; font-weight: bold; font-size: 20px;" type="text" class="form-control" id="symptoms" name="symptoms" required>
+                                </div>
+                                <div class="mb-3 text-center">
+                                    <button type="submit" class="btn" style="background-color: #fe9a24; padding: 2% 10%; margin: 10px 0; border-radius: 10px; color: white; font-size: 20px;" >Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

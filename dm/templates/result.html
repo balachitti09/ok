@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/static/images/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 5% 20%;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: black;
+        }
+        .center-screen {
+            padding: 5% 20%;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .card {
+            border-radius: 20px;
+        }
+        .card-title {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: black;
+        }
+        hr {
+            background-color: black;
+        }
+        .card-subtitle {
+            font-size: 20px;
+            color: green;
+        }
+        p, li {
+            font-size: 20px;
+            color: green;
+        }
+        .btn-warning {
+            background-color: #fe9a24;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container center-screen">
+        <div class="d-flex justify-content-center pb-5">
+            <a href="{{ url_for('index') }}" style="text-decoration: none; color: white;">
+                <button type="button" class="btn btn-warning justify-content-center">Home</button>        
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title mb-4">Symptoms</h1>
+                        <hr>
+                        <h3 class="card-subtitle mb-3">{{ user_symptoms }}</h3>                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title mb-4">Predicted Disease</h1>
+                        <hr>
+                        <h3 class="card-subtitle mb-3">{{ predicted_disease }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title mb-4">Description</h1>
+                        <hr>
+                        <p>{{ dis_des }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title mb-4">Precautions</h1>
+                        <hr>
+                        <ul class="list-unstyled">
+                            {% for precaution in precautions %}
+                                <li>{{ precaution }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title mb-4">Medications</h1>
+                        <hr>
+                        <ul class="list-unstyled">
+                            {% for medication in medications %}
+                                <li>{{ medication }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title mb-4">Diet</h1>
+                        <hr>
+                        <ul class="list-unstyled">
+                            {% for my_diet in rec_diet %}
+                                <li>{{ my_diet }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

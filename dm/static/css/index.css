@@ -1,0 +1,24 @@
+body {
+    background-image: url('/static/images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+}
+
+.mb-3{
+    color: white;
+    font-size: 30px;
+}
+
+. mb-4{
+    color: white;
+
+}
