@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Phishing Detection Extension",
+    "version": "1.0",
+    "description": "Warns users about phishing emails",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "permissions": ["activeTab", "storage", "scripting"],
+    "host_permissions": ["https://mail.google.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://mail.google.com/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
